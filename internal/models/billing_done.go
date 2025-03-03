@@ -5,17 +5,17 @@ import "net/http"
 type BillingPo struct {
 	ID              int     `json:"id"`
 	Timestamp       string  `json:"timestamp"`
-	EnggName        string  `json:"engg_Name"`
+	EnggName        string  `json:"engg_name"`
 	Supplier        string  `json:"supplier"`
-	BillNo          string  `json:"bill_No"`
-	BillDate        string  `json:"bill_Date"`
-	CustomerName    string  `json:"customer_Name"`
-	CustomerPoNo    string  `json:"customer_Po_No"`
-	CustomerPoDate  string  `json:"customer_Po_Date"`
-	ItemDescription string  `json:"item_Description"`
-	BilledQty       int     `json:"billed_Qty"`
+	BillNo          string  `json:"bill_no"`
+	BillDate        string  `json:"bill_date"`
+	CustomerName    string  `json:"customer_name"`
+	CustomerPoNo    string  `json:"customer_po_no"`
+	CustomerPoDate  string  `json:"customer_po_date"`
+	ItemDescription string  `json:"item_description"`
+	BilledQty       int     `json:"billed_qty"`
 	Unit            string  `json:"unit"`
-	NetValue        float64 `json:"net_Value"`
+	NetValue        float64 `json:"net_value"`
 	CGST            float64 `json:"cgst"`
 	IGST            float64 `json:"igst"`
 	Totaltax        float64 `json:"total_tax"`
