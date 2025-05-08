@@ -9,6 +9,11 @@ import (
 	"github.com/naveeshkumar24/repository"
 )
 
+// registerRouter sets up and configures the HTTP routes for billing purchase order operations.
+// It initializes a new router with CORS middleware and defines endpoints for dropdown,
+// submission, fetching, updating, and deleting billing purchase order data,
+// as well as an endpoint for downloading billing purchase order data as an Excel file.
+// The function takes a database connection as input and returns a configured router.
 func registerRouter(db *sql.DB) *mux.Router {
 	router := mux.NewRouter()
 	router.Use(middleware.CorsMiddleware)

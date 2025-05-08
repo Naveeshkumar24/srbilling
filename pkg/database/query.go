@@ -80,6 +80,9 @@ func (q *Query) CreateTables() error {
 	return nil
 }
 
+// FetchDropDown retrieves a list of dropdown options for billing PO data by performing a cross join
+// across engineering names, suppliers, customer names, and units. It returns a slice of BillingPoDropDown
+// containing unique combinations of these dropdown values, or an error if the database query fails.
 func (q *Query) FetchDropDown() ([]models.BillingPoDropDown, error) {
 	var dropdowns []models.BillingPoDropDown
 
@@ -203,6 +206,10 @@ func (q *Query) UpdateBillingPoData(data models.BillingPo) error {
 	log.Printf("BillingPo data updated successfully for ID %d.", data.ID)
 	return nil
 }
+
+// DeleteBillingPoData deletes a billing PO record from the database by its ID.
+// It uses a transaction to ensure data integrity, rolling back if an error occurs.
+// Returns an error if the database transaction or deletion fails.
 func (q *Query) DeleteBillingPoData(id int) error {
 	tx, err := q.db.Begin()
 	if err != nil {
